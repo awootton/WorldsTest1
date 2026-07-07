@@ -1,4 +1,5 @@
 
+We'll try real hard to not have to have this. 
 
 At some point spaces, properties, avatars, and items etc may have to serve from a back end.
 

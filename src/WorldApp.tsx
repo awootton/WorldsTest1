@@ -10,6 +10,9 @@ import * as oct from "./knotfree-ts-lib/3d/UrlOctTree"
 
 // import { render } from '@react-three/offscreen';
 
+// doesn't use a server. Should not know about knotfree.net, .io or .dog at all, except the lib
+// (dog is localhost)
+
 function WorldApp() {
 
   // who is calling us? log the window.location.href to see where we are
@@ -54,6 +57,14 @@ function WorldApp() {
   console.log("WorldApp render called from " + (window.location.href || "unknown location"));
 
   const path = window.location.pathname
+  const host = window.location.host
+  const hostname = window.location.hostname
+  const origin = window.location.origin
+
+  console.log("WorldApp render path " + (path || "unknown location"));
+  console.log("WorldApp render host " + (host || "unknown location"));
+  console.log("WorldApp render hostname " + (hostname || "unknown location"));
+  console.log("WorldApp render origin " + (origin || "unknown location"));
 
   console.log("WorldApp render path " + (path || "unknown location"));
 
@@ -65,6 +76,7 @@ function WorldApp() {
     world: ""
   }
 
+  // no need to parse the path? it's in the host?
   let cubeName = ""
   if (path.startsWith("/") && (path.endsWith(".xyz") || path.endsWith(".vr"))) {
 
@@ -74,7 +86,7 @@ function WorldApp() {
     console.log("WorldApp render extracted cubeName " + cubeName);
     // parse it to be sure.
 
-    const [parsedCube, err] = oct.stringToCube(cubeName)
+    const [parsedCube, err] = oct.StringToCube(cubeName)
     if (err) {
       console.error("WorldApp render error parsing cubeName " + cubeName + ": " + err);
     } else {

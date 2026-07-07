@@ -14,11 +14,20 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "canvas": "^3.2.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "jsdom": "^29.1.1",
+    "three": "^0.185.0",
+    "vblob": "^1.1.0"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.19"
+    "@types/cors": "^2.8.19",
+    "@types/jsdom": "^28.0.3",
+    "@types/node": "^26.0.1",
+    "@types/three": "^0.185.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
   }
 }
