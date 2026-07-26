@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 import * as oct from './DomainNameOctTree'
+=======
+import * as oct from './UrlOctTree'
+>>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
 
 import * as loaders from './OctTreeLoaders'
 import * as atwdns from './DnsTypes'
@@ -22,12 +26,15 @@ export type ThingsThatAlreadyExistType = {
 // the list of cubes that we already had in the cache, the list of cubes that we actually need to reserve, 
 // a reference to the cube cache, and any error that occurred during the process.
 // Prepared by PrepareToReservePropertyBatch
+<<<<<<< HEAD
 
 // This is NOT the right way, or the right algo to remove a property.
 // right way is to put the target leaf on a list to delete and then check if there is a child bits cache
 // that reverences it, and ONLY it. Then we put that on the list to delete, and then recurse.
 // A child bits cache cannot be deleted but it's key is a domain name and it can go.
 // Then we may have to wait 5 minutes AND refresh your browser app. (shift-reload).
+=======
+>>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
 export type ReserveResult = {
     startingProperties: string[],
     rawChains: oct.Cube[][], // the raw chain of cubes that we would need to reserve, including the ones that are already in the cache. This is for debugging and visualization purposes.
@@ -79,7 +86,11 @@ export class ReserveVrFunctions {
         }
         // console.log("Group text parameters for the reservation:", JSON.stringify(groupTextParameters), gtpString.length)
 
+<<<<<<< HEAD
         let tmp = await this.PrepareToReservePropertyBatch(cubeNames, oct.gTreeStatusCache)
+=======
+        let tmp = await this.PrepareToReservePropertyBatch(cubeNames, oct.gCubeCache)
+>>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
         // console.log("PrepareToReservePropertyBatch result", tmp)
         if (tmp instanceof Error) {
             console.error("Error preparing to reserve property batch:", tmp)
@@ -201,9 +212,15 @@ export class ReserveVrFunctions {
                         var theseParams = {
                             ...groupTextParameters,
                         } as oct.GroupTextParameters
+<<<<<<< HEAD
                         if (i === 0) {
                             // if it's the first one, then we should set it as the master. 
                             theseParams.master = "must-be-valid-cube-string"
+=======
+                        if ( i === 0) {
+                            // if it's the first one, then we should set it as the master. 
+                            theseParams.mstr = true
+>>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
                             console.log(`Setting ${cubeUrlVr} as the master node for the group. ${theseParams.id}`)
                         }
                         const gtpString = JSON.stringify(theseParams)
@@ -235,6 +252,7 @@ export class ReserveVrFunctions {
         }
     }
 
+<<<<<<< HEAD
 
     // This is half ass. Make a better one. Start with a new fresh childbits cache and it's easy.
     // none of this mucking about.
@@ -433,6 +451,8 @@ export class ReserveVrFunctions {
 
 
 
+=======
+>>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
     // PrepareToReserveProperty will prepare a list of names to reserve. 
     // It does not actually do the reservation, and it will NOT check the cache and return the whole list.
     // The idea is that we can then batch those missing ones together and reserve them all at once, and then update the cache with the new ones.
