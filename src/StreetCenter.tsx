@@ -7,7 +7,6 @@ export function StreetCenter() {
     const texture = useTexture('street.jpg');
     const meshRef = useRef<THREE.Mesh>(null);
 
-
     // can we get the bytes of the texture? yes we can
     // const bytes = texture.image.data; // this is a Uint8Array
     // console.log(bytes);  // is this the same as the original file? no it's not, it's the decoded image data

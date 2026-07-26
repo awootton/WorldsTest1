@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import * as ReactDOMClient from "react-dom/client";
 
-import WorldApp from "./WorldApp";
+import AppSpliter from "./AppSplitter";
 
 const rootElement = document.getElementById("root");
 
@@ -11,7 +11,7 @@ if (rootElement) {
 
   root.render(
     <StrictMode>
-      <WorldApp />
+      <AppSpliter />
     </StrictMode>
   );
 

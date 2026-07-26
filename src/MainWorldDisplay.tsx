@@ -24,8 +24,8 @@ export function MainWorldDisplay() {
   return (
      <>
 
-      <StreetCenter />
-      <StreetCenter2 />
+      {/* <StreetCenter />
+      <StreetCenter2 /> */}
 
       <mesh key={index} position={[4, 0, -8]}>
         <boxGeometry args={[markerSize * 0.8, markerSize * 0.8, markerSize * 0.8]} />

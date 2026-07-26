@@ -34,7 +34,7 @@ function createRoot(canvas) {
         linear = false,
         flat = false,
         legacy = false,
-        orthographic = false,w
+        orthographic = false,
         frameloop = 'always',
         dpr = [1, 2],
         performance,
@@ -143,7 +143,7 @@ function createRoot(canvas) {
         setDeep(THREE, legacy, ['ColorManagement', 'legacyMode']);
       }
 
-      const outputEncoding = linear ? THREE.LinearEncoding : THREE.sRGBEncoding;
+      const outputEncoding = linear ? THREE.LinearEncoding : THREE.SRGBColorSpace;
       const toneMapping = flat ? THREE.NoToneMapping : THREE.ACESFilmicToneMapping;
       if (gl.outputEncoding !== outputEncoding) gl.outputEncoding = outputEncoding;
       if (gl.toneMapping !== toneMapping) gl.toneMapping = toneMapping; // Update color management state

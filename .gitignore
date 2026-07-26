@@ -9,6 +9,11 @@ lerna-debug.log*
 
 my-cache
 
+# don't check in the build
+build
+
+# do check in the knotfree-ts-lib but not the 
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
