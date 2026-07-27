@@ -8,10 +8,6 @@ export const sss = "hello world"
 
 // THIS FAILS:  localStorage.setItem('user_token', 'xyz123');
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
 // Is this the same API? It doesn't persist but is it the same API?
 // yes, note that it doesn't persist. I already lost half a day to crappy libs for this. 
 export class MyLocalStorage {
@@ -48,7 +44,6 @@ export class MyLocalStorage {
     }
 }
 
-<<<<<<< HEAD
 // Note that the node version of localStorage is not persistent, so it will not retain data between runs of your application.
 // 
 export const ourLocalStorage = (typeof window !== "undefined" && window !== null) ? window.localStorage : new MyLocalStorage()
@@ -68,16 +63,3 @@ export const ourLocalStorage = (typeof window !== "undefined" && window !== null
 
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-=======
-export const ourLocalStorage = (typeof window !== "undefined" && window !== null) ? window.localStorage : new MyLocalStorage()
- 
-// to define some LocalStorage in nodejs but don't mess up the browser's localStorage.
-// do I need to do somethig like this? and include this file?
-
-// import * as NodeLocalStorage from 'node-localstorage'
-
-
-// // this is pretty cool. Thanks CP. Will it work? 
-// export const ourLocalStorage = (typeof window !== "undefined" && window !== null) ? window.localStorage : new NodeLocalStorage.LocalStorage('./scratch')
-
->>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e

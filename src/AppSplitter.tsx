@@ -38,7 +38,21 @@ export default function AppSplitter() {
 
     const [domainName, err] = utils.FindDomainName(window.location.hostname, window.location.search);
 
-    if (err && !href.includes("mqtt")) {
+
+    if (path.includes("exporttest")) {
+        return <CylinderCanvas />;
+    }
+
+    if (href.includes("mqtt")) {
+
+        console.log("called by mqtt");
+
+        // nice useEffect listener.
+        return <MqttComponent />;
+
+    }
+
+    if (err) {
         console.log("AppSplitter FindDomainName error: " + err.message);
         return (<div style={{
             fontSize: "8px"
@@ -50,10 +64,6 @@ export default function AppSplitter() {
     // TODO: testmain-2n0u7w2p is the no-content 4 meter we have now. We should send it a GLB.
     // Downloading a glb file with GLTFExporter
     // see this: https://discourse.threejs.org/t/how-to-export-a-scene-to-glb/22990/2
-
-    if (path.includes("exporttest")) {
-        return <CylinderCanvas />;
-    }
 
     // These must be uneerringly, relentlessly, correct. 
 
@@ -100,14 +110,6 @@ export default function AppSplitter() {
     }
     console.log("AppSplitter has href = " + href);
 
-    if (href.includes("mqtt")) {
-
-        console.log("called by mqtt");
-
-        // nice useEffect listener.
-        return <MqttComponent />;
-
-    }
     // else { 
     //     // the original: get rid of this.
     //     // has a weird listener.

@@ -5,20 +5,11 @@
   "keywords": [],
   "main": "src/index.tsx",
   "dependencies": {
-<<<<<<< HEAD
-    "@babel/runtime": "^8.0.0",
-=======
->>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
     "@react-three/offscreen": "^0.0.8",
     "@types/three": "0.143.0",
     "fast-sha256": "^1.3.0",
-<<<<<<< HEAD
-    "mqtt": "^5.15.2",
-    "r3f-perf": "^7.2.3",
-=======
->>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-scripts": "5.0.1",

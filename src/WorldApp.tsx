@@ -13,11 +13,6 @@ import { TheDuckApp } from "./Apps/TheDuckApp";
 
 // doesn't use a server. Should not know about knotfree.net, .io or .dog at all, except the lib
 // (dog is localhost)
-<<<<<<< HEAD
-=======
-
-function WorldApp() {
->>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
 
 // This is the main entry point, after index.tsx
 // let's split here into sparate apps depending on the url.
@@ -31,15 +26,7 @@ function WorldApp() {
   const host = window.location.host
   const hostname = window.location.hostname
   const origin = window.location.origin
-<<<<<<< HEAD
   const href = window.location.href
-=======
-
-  console.log("WorldApp render path " + (path || "unknown location"));
-  console.log("WorldApp render host " + (host || "unknown location"));
-  console.log("WorldApp render hostname " + (hostname || "unknown location"));
-  console.log("WorldApp render origin " + (origin || "unknown location"));
->>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
 
   // console.log("WorldApp render path " + (path || "unknown location"));
   // console.log("WorldApp render host " + (host || "unknown location"));
@@ -48,14 +35,8 @@ function WorldApp() {
 
   // console.log("WorldApp render path " + (path || "unknown location"));
 
-<<<<<<< HEAD
   // console.log("WorldApp window location " + (window.location));
   // console.log("WorldApp window  " + (window));
-=======
-  // no need to parse the path? it's in the host?
-  let cubeName = ""
-  if (path.startsWith("/") && (path.endsWith(".xyz") || path.endsWith(".vr"))) {
->>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
 
 //   WorldApp render path /
 // WorldApp.tsx:32 WorldApp render host localhost:3010
@@ -70,7 +51,6 @@ function WorldApp() {
 // AppSplitter.tsx:22 WorldApp render origin http://localhost:3010
 // AppSplitter.tsx:24 WorldApp render path /
 
-<<<<<<< HEAD
 let count = 0
   function WorldApp() {
 
@@ -160,14 +140,6 @@ let count = 0
       z: 0,
       p: 1,
       world: ""
-=======
-    const [parsedCube, err] = oct.StringToCube(cubeName)
-    if (err) {
-      console.error("WorldApp render error parsing cubeName " + cubeName + ": " + err);
-    } else {
-      console.log("WorldApp render parsed cubeName " + cubeName + " to octree: ", parsedCube);
-      cube = parsedCube
->>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
     }
 
     // no need to parse the path? it's in the host?
