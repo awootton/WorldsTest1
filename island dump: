@@ -1,0 +1,240 @@
+range Heartbeat tick heartbeat is: 0
+TheFormallyOrange-4west.tsx:192 Sending hello message to testmain-2n0u4w2p-mainland-centre testmain-2n0u4w2p-mainland-centre
+RPC_Gadget.ts:109 Sending command to channel: testmain-2n0u4w2p-mainland-centre with command: hello
+TheFormallyOrange-4west.tsx:198 Orange Sent hello message, got response Promise: Promise {<pending>}
+PubSubTopicAndSubscribers.ts:352 have mainland dump: 
+ mainland Top of Dump for mainland
+        NewGroupKeys:
+            MaketheGroups:
+                 cb:{.........}
+                     info:Changes the GroupKeys
+        NewGroupKeys:
+            MakeListOfIFrames:
+                 cb:{.........}
+                     info:nolog
+        cb_courtyard_ZzhgfQzHpgjgxTtgrBoT:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_dirt_eE1GTqKdcR4fr9S8bLsm:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_TheStreet_un5X8gu9f1K5nyFJIjjR:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_SevenWest_Cv2IaPKaL1kw5cNOktQQ:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_duck_DyusMkggPndSCmghIbhO:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_orange_nqhkee1QGFYOafYGY32v:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_courtyard_XtDoyGSgqDgFmzhicu9Y:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_dirt_NMIWDsFmxjypOUilDpsw:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_TheStreet_izazDj2kjRRhow0gMNjM:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_SevenWest_2hRjHlHh0pbUgx3RcMNy:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_duck_QDMdo3TrjQI28bnE1oET:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_orange_JWXo1CNUvEpCKGNMi99P:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_courtyard_itqIEY3y4jxhLN9bzUv7:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_dirt_ObHqG5BZlP5tnf7LtYeE:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_TheStreet_jTFPIkgQK1DPO4sGsESI:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_SevenWest_9m0XVkNuK5CZ1ctMATUJ:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_duck_XW9sAQa3CyjQyai1Nuiu:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_orange_elQ8eb6ihwrXe96VyDC2:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        testmain-0n0u0e5p-mainland-centre:
+            :
+                 cb:{.........}
+                     info:
+        testmain-0n1d0e9p-mainland-centre:
+            :
+                 cb:{.........}
+                     info:
+        testmain-1n0u10w4p-mainland-centre:
+            :
+                 cb:{.........}
+                     info:
+        testmain-2n0u7w2p-mainland-centre:
+            :
+                 cb:{.........}
+                     info:
+        testmain-2n0u5w2p-mainland-centre:
+            :
+                 cb:{.........}
+                     info:
+        testmain-2n0u4w2p-mainland-centre:
+            :
+                 cb:{.........}
+                     info:
+        cb_courtyard_tNQ6a2Y5DlEVTKipAFXJ:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_dirt_sEXkTr5PLuqwNVJRakPz:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_TheStreet_juuMGaQwdiYjwpkxKjUN:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_SevenWest_mfvOhx5lcjg157tgmAFe:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_duck_a193pKB6xZGHuKQmjxMx:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_orange_MxUq8tZnV2sct17SOxGD:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_courtyard_mt92AfFa0ZuFzJe7WWjx:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_dirt_j59qChQM6QUKZ45svQHw:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_TheStreet_KI5NcZWb0G7bxScxxsR4:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_SevenWest_WsJ3ugQUEhs9Tq5rvnz4:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_duck_3x6F3BfOjlLiewNzqzZt:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        cb_orange_zWAphpnCumE0gocntsWR:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        DemoPropertiesChanges:
+            MainWorldDisplay:
+                 cb:{.........}
+                     info:resets demo properties to trigger a redraw
+        ShowingLeavesChanges:
+            App:
+                 cb:{.........}
+                     info:common state setter for leavesToRender
+        LoadingMessage:
+            App:
+                 cb:{.........}
+                     info:Just changes the 'loading' message.
+PubSubTopicAndSubscribers.ts:347 have island dump: 
+ orange Top of Dump for orange
+        cb_orange_c78ADt5ozOoFNEgCnNrG:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        testmain-2n0u4w2p-island-centre:
+            :
+                 cb:{.........}
+                     info:
+PubSubTopicAndSubscribers.ts:347 have island dump: 
+ SevenWest Top of Dump for SevenWest
+        cb_SevenWest_43KV0Lg1nVy8Ljijnlgy:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        testmain-2n0u7w2p-island-centre:
+            :
+                 cb:{.........}
+                     info:
+PubSubTopicAndSubscribers.ts:347 have island dump: 
+ dirt Top of Dump for dirt
+        cb_dirt_cgKynJ7HwlMXrcDjCZzn:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        testmain-0n1d0e9p-island-centre:
+            :
+                 cb:{.........}
+                     info:
+PubSubTopicAndSubscribers.ts:347 have island dump: 
+ courtyard Top of Dump for courtyard
+        cb_courtyard_6NsfpXakbOtpyj1TPxKr:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        testmain-0n0u0e5p-island-centre:
+            :
+                 cb:{.........}
+                     info:
+PubSubTopicAndSubscribers.ts:347 have island dump: 
+ TheStreet Top of Dump for TheStreet
+        cb_TheStreet_x4lRlaVa0ykJNRHWKNRg:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        testmain-1n0u10w4p-island-centre:
+            :
+                 cb:{.........}
+                     info:
+PubSubTopicAndSubscribers.ts:347 have island dump: 
+ duck Top of Dump for duck
+        cb_duck_VXsC17sDTREtCdP78Sjo:
+            RpcHelper:
+                 cb:{.........}
+                     info:tmp channel always has ANOTHER callback
+        testmain-2n0u5w2p-island-centre:
+            :
+                 cb:{.........}
+                     info:
+PubSubTopicAndSubscribers.ts:410 ------End of dump:  courtyard
+PubSubTopicAndSubscribers.ts:410 ------End of dump:  SevenWest
+PubSubTopicAndSubscribers.ts:410 ------End of dump:  orange
+PubSubTopicAndSubscribers.ts:410 ------End of dump:  dirt
+PubSubTopicAndSubscribers.ts:410 ------End of dump:  TheStreet
+PubSubTopicAndSubscribers.ts:410 ------End of dump:  duck
+AppCanvas.tsx:589 Time taken for TraverseTheTree:  1 ms. Leaves found= 77
+PubSubTopicAndSubscribers.ts:195 PubSubTopicAndSubscribers publish called with key ShowingLeavesChanges
+PubSubTopicAndSubscribers.ts:195 PubSubTopicAndSubscribers publish called with key LoadingMessage
+TheFormallyOrange-4west.tsx:187 Orange Ora

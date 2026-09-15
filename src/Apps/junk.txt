@@ -1,0 +1,442 @@
+
+   // We have to pretend that we've just now loaded.
+    // Even though the splitter just derived the name we have to do it again.
+    // In reality it's just request.hostname.
+
+    // const [domainName, err] = utils.FindDomainName(window.location.hostname, window.location.search);
+    // if (err) {
+    //     console.log("TheFormallyOrange4WestApp FindDomainName error: " + err.message);
+    //     return (<div style={{
+    //         fontSize: "8px"
+    //     }}>FindDomainName Error {err.message}</div>);
+    // }
+
+
+
+
+    // it's in the URL. It IS the Domain name, 
+    // const urlParams = new URLSearchParams(window.location.search);
+    // const domainName = urlParams.get("domain");
+    // or it mught just be localhost:3010
+    // is it 
+
+
+    // auxLeafData has my name.
+    // const [auxLeafData, setAuxLeafData] = useState<any>(null);
+
+
+    // Set a timer to send a message every 5 seconds - just a test. 
+    // Which works. They show up on the mainland. 
+    useEffect(() => {
+
+        const timer = setTimeout(() => {
+            testMessageCount();
+        }, 5000); // 5000 milliseconds = 5 seconds
+
+        // Clean up the interval on component unmount
+        return () => clearTimeout(timer);
+    }, []); // once is enough.
+
+
+
+    
+    function testMessageCount() {
+
+        console.log("TheFormallyOrange4WestApp is TRYING to send  message to parent. Count: ");
+
+        const msg = "This is a test message from INSIDE the iframe FormallyOrange4WestApp. Count: ";
+        window.parent.postMessage(msg, '*');
+
+        //         // Replace with your parent page's exact domain/origin
+        //         const parentOrigin = "http://localhost:3020";
+        //         // Send the message
+        //         // window.parent.postMessage(gltfMessage, parentOrigin);
+        //         console.log("GLTF message prepared size:", gltfMessage.data.size);
+        //         // avoid using (they say) '*' as the target origin for security reasons.
+        //         window.parent.postMessage(gltfMessage, '*'); // lol - because it might work.}
+    }
+
+
+
+
+
+  // these are supposedly all the messages for this entire iFrame app
+    // where else would messages come in? We need to tunnel then right into the pub/sub system.
+    // over here. 
+    const handleMessageOrangeWest = (event: MessageEvent<any>) => {
+
+        if (testLoadCont < 40) {
+            // from webpack. 
+            // type webpackOK
+            // data: undedfined
+            // 
+
+            console.log("TheFormallyOrange4WestApp got message Data from ??:", event.data, event.origin, event.source);
+            console.log("TheFormallyOrange4WestApp can we send it back?");
+        }
+        testLoadCont++;
+
+        // this is where the message from the mainland shows up. "".
+        // "{to: 'nobody_yet_orange', from: 'The inside of the orange iFRame peoeuhhrff', type: 'test message from the top of the screen to the iFrame', sessionId: 'none'}"
+
+        // I'm going to send something back. I KNOW my name. Can the receiver tell if I'm not explicit about who I am?
+
+        const targetOrigin = "*"; // Replace with your parent page's exact domain/origin for security
+        const messageData = {
+            to: "someplace that is off the orange island",
+            from: "The inside of the orange iFrame sfklfgjjhge",
+            type: "test message from the top of the screen to the iFrame",
+            sessionId: "none" + master
+        };
+
+        //   window.parent.postMessage(messageData, targetOrigin);
+
+
+        // We're supposed to check that we only get messages from gotohere but that would lock out all
+        // the other possible people who want to write Metaverse appa from also running 
+        // this app and also ending the same messages and basically working. Not good.
+        // but I don't look at it then I have see: {source: 'react-devtools-bridge'
+        // and type: 'webpackInvalid'
+        // how do I get rid of those?
+
+        // SECURITY STEP: Replace with your actual trusted parent domain
+        //   const trustedOrigin = "https://parent-domain.com";
+        //   if (event.origin !== trustedOrigin) return;
+        // this isn't going to work I don't think. 
+        // const trustedList = new Set<string>([ // this is all bullshit. They screwed the pooch on this. 
+        //     "https://gotohere.com",
+        //     "https://gotohere.org",
+        //     "http://localhost:3020",
+        //     "http://localhost:3010"
+        // ]);
+        // this is localhost dev mode. What's going to break when in prod when 
+        // these static react apps are coming from CND networks and not localhost?
+        // I'm going to turn this off is what's going to happen. I don't have time for this crap.
+        // if (!trustedList.has(event.origin)) {
+        //     console.warn("TheFormallyOrange4WestApp received a message from an untrusted origin:", event.origin);
+        //     return;
+        // }
+
+        // if (event.source === null) {
+        //     console.warn("TheFormallyOrange4WestApp received a message with no source:", event);
+        //     return;
+        // }
+
+        // if (!messes.ensureMessageBaseClass(event.data)) {
+        //     return; // Not a valid MessageBaseClass, ignore. It's not from us.
+        // }
+        // const request = event.data as messes.MessageBaseClass;
+
+        // // Process the incoming data
+        // console.log("TheFormallyOrange4WestApp got messes message Data from parent:", event.data, event.origin, event.source);
+        // // setParentData(event.data);
+
+        // // We MUST parse the message for meaning now.
+        // // and generate the right response. 
+
+        // if (request.type === "Greetings") {
+        //     const greetingsMessage = event.data as messes.Greetings;
+        //     console.log("TheFormallyOrange4WestApp received Greetings message:", greetingsMessage.message);
+        //     //setAuxLeafData(greetingsMessage.auxLeafStatus);
+
+        //     // we should send a reply back to the parent to acknowledge receipt of the message - na. 
+        //     // this is not the internet. 
+        //     // how do we pause the animation, or force it so it will make the BLB we want
+
+        //     // how do I do this? now?  renderer.render(scene, camera);
+        //     // try this later  DrawOnceAndStop()
+        // }
+
+        // this will be more fun when we can recognize this as an avatar move request and then we can push a ghost around.
+
+        // let's send them a glb of the scene., once. later.
+
+        // note how it falls on the floor. We need some subscribers in here.
+
+        // TODO: Fixme: put a pubsub in here and deal with reality.
+
+    };
+
+    function XXDrawOnceAndStop() {
+        // This function will render the scene once and then stop the animation loop. Doesn't work.
+        const { gl, scene, camera } = useThree();
+
+        // Render the scene once
+        gl.render(scene, camera);
+
+        // Stop the animation loop
+        gl.setAnimationLoop(null);
+    }
+
+
+
+
+    // move this into the the bridge pub/sub system. 
+    useEffect(() => {
+        // Add listener on mount
+        // Does this get ALL the messages? 
+        // I think a lot of people on the island could get these.
+        window.addEventListener("message", handleMessageOrangeWest);
+        // Clean up listener on unmount to prevent memory leaks
+        return () => window.removeEventListener("message", handleMessageOrangeWest);
+    }, []); // Empty array ensures this runs once on mount
+
+
+
+
+//  setBlob(finalBlob);
+//     return finalBlob
+
+// if (blob == null) {
+//     const ablob = exportToBlob(); // just once. 
+//     if (ablob != null) {
+//         console.log("GLTF exportToBlob has size:", ablob.size);
+//         setBlob(ablob);
+
+//         // send away, fly away little bird.
+//         let gltfMessage: messes.GlbMessage = {
+//             to: "GlbCreatedMessage", // "request.from", // Fill in the appropriate recipient
+//             from: "testmain-2n0u4w2p-to-frame", // Fill in the sender // should be the master. that's me.
+//             type: "glb",
+//             sessionId: "none", // Fill in the session ID
+//             name: "TheFormallyOrange4WestAppScene.glb",
+//             errorMessage: "",
+//             comment: "This is a GLB exported from TheFormallyOrange4WestApp",
+//             key: "mainglb",
+//             data: ablob
+//         };
+
+//         // it's going to pop out at the iFrame util and then publish as GlbCreatedMessage
+
+//         // Replace with your parent page's exact domain/origin
+//         const parentOrigin = "http://localhost:3020";
+//         // Send the message
+//         // window.parent.postMessage(gltfMessage, parentOrigin);
+//         console.log("GLTF message prepared size:", gltfMessage.data.size);
+//         // avoid using (they say) '*' as the target origin for security reasons.
+//         window.parent.postMessage(gltfMessage, '*'); // lol - because it might work.}
+//     }
+
+
+
+    // const [blob, setBlob] = useState<Blob | null>(null);
+    // const { scene } = useThree(); // only inside canvas
+
+    useEffect(() => {
+        (async () => {
+            try {
+
+                interface MessageWrapper {
+                    adest: string;
+                    areturn: string;
+                    msg: any;
+                }
+
+                // do we save this? Do we only have to do it once?
+                // can we only do this from in here becausse of the groupRef?
+
+                const stackblob = await exportGroupToBlob(groupRef);
+
+                var testGlbMessage: messes.GlbMessage = {
+
+                    to: "Glb????CreatedMessage", // "request.from", // Fill in the appropriate recipient
+                    from: "testmain-2n0u4w2p-to-frame", // Fill in the sender // should be the master. that's me.
+                    type: "glb",
+                    sessionId: "none", // Fill in the session ID
+
+                    // type: "glb";
+                    name: "none",// of the master w/0 the tld. This will refer to the AuxLeafStatus on the other side..
+
+                    command: "add", // "add" or "remove" or "update" or "replace", or "pause"/
+                    // "start" or "delete" or "modify" or "change" or "redraw"
+                    comment: "", // a comment about the change, for logging and debugging.
+
+                    key: "stack", // a name for the blob.
+                    active: true, // should it be playing? 
+                    data: stackblob, // this is the exported glb data as a Blob.
+                };
+
+
+                //    window.parent.postMessage("testMessage11", "*");
+
+                // nobody is subscribing to this message. It's just a test.
+                // but it will go there. Somewhere.
+                //  window.parent.postMessage(testGlbMessage, "*");
+
+
+            } catch (error) {
+                console.error('Failed to export GLB:', error);
+            }
+        })();
+    }, []); // Empty dependency array ensures this runs only once on mount
+
+    // useEffect(() => { // just once, right? 
+
+    //     (async () => {
+    //         // This effect runs once when the component mounts
+    //         try {
+    //             const blob = await exportGroupToBlob(groupRef);
+    //             // send the message
+    //             //                 let gltfMessage: messes.MessageBaseClass = {
+    //             // `                    to: "GlbCreatedMessage", // "request.from", // Fill in the appropriate recipient
+    //             //                     from: "testmain-2n0u4w2p-to-frame", // Fill in the sender // should be the master. that's me.
+    //             //                     type: "glb",
+    //             //                     sessionId: "none", // Fill in the session ID
+    //             //                 }
+    //             // {
+    //             //     // can we dump this as hex? yes we can. But it's a lot of hex.
+    //             //     const arrayBuffer = await (gltfMessage.data as Blob).arrayBuffer();
+    //             //     const hexString = Array.from(new Uint8Array(arrayBuffer))
+    //             //         .map(byte => byte.toString(16).padStart(2, '0'))
+    //             //         .join('');
+    //             //     console.log("GLTF message prepared hex string length:", hexString.length);
+    //             //     // console.log("GLTF message prepared hex string:", hexString);
+    //             //     // I know it's correct because I can read it elsewhere. 
+    //             //     // Na, lets just write the file, 
+    //             //     if ( false ){ // I have a hundred of these now. lol. 
+    //             //         try {
+
+    //             //             // Create a temporary URL and trigger a download
+    //             //             const url = URL.createObjectURL(gltfMessage.data as Blob);
+    //             //             const link = document.createElement('a');
+    //             //             link.href = url;
+    //             //             link.download = './orange-cylinders.glb';
+    //             //             link.click();
+
+    //             //             URL.revokeObjectURL(url); // Clean up
+    //             //         } catch (error) {
+    //             //             console.error('Failed to export GLB:', error);
+    //             //         }
+    //             //     };
+    //             // }
+
+    //             // it's going to pop out at the iFrame util and then publish as GlbCreatedMessage
+    //             // console.log("GLTF message prepared size:", gltfMessage.data.size);
+
+    //             const parentOrigin = "http://localhost:3020";
+    //             // Send the message
+    //             // window.parent.postMessage(gltfMessage, parentOrigin);
+    //             //   console.log("GLTF message prepared ok?:", gltfMessage.data ? gltfMessage.data.size : "no data siz");
+    //             //console.log("GLTF message prepared size:", gltfMessage.data.size);
+    //             // avoid using (they say) '*' as the target origin for security reasons.
+    //             // const transferrable = [gltfMessage.data as ArrayBuffer]; // it's 14,664 bytes. 
+
+
+    // let's do this on request. 
+
+    //             //   window.parent.postMessage(gltfMessage, '*'); // lol - because it might work.}
+
+
+
+
+    //             // const wrappedMessage: messageWrapper = {
+    //             //     actualDestination: "master-draw-element",
+    //             //     message: gltfMessage
+    //             // };
+
+    //             // window.parent.postMessage(gltfMessage, '*'); // lol - because it might work.}
+
+
+    //             interface ApiResponse<Data> {
+    //                 status: number;
+    //                 message: string;
+    //                 payload: Data; // Becomes whatever type you pass in
+    //             }
+
+
+    //             // this goes in here and comes out in the handleMesssage of MakeListOfIFrames.
+    //             // where it needs to be re-published so that the ThingWithAux drawing element can 
+    //             // get it. subscribe to it and get the glb and then draw it, and them maybe respond.
+    //             // // actualDestination: string // aka testmain-0n0u0e32-glb-changes
+    //             // actualReturn: string // aka testmain-0n0u0e32-to-frame
+
+    //             interface MessageWrapper<MTYPE> {
+    //                 adest: string;
+    //                 areturn: string;
+    //                 msg: <MTYPE>;
+    //             }
+
+
+    //             /*
+    //                             so we sent it to the MakeListOfIFrames
+    //                                      who gets all the messages from all the frames. 
+    //                                        subscribes to master + "-to-frame"
+    //                                       so it can deliver to the iframes.
+    //                                        will publish to master + "-to-frame");
+    //                             but we really want to send it directly to the ThingWithAux drawing elsement
+    //                                     subscribes master + "-redraw"
+    //                                     and
+    //                                     sub.subscribe(master + "-glb-changes",
+    //             */
+
+
+    //             // it's going to re-appear in the player as a GlbCreatedMessage.  
+    //             // we assign it to a AuxLeafStatus and then we can use it to make a scene.
+
+    //             // very cute. Now let's send it directly to the master drawing react-three drawing element involved.
+
+    //             // the destination is master-draw-element,  
+    //             // we want to send it to the react-three drawing element draws this space.
+    //             // That address is 
+    //             const destination = "-draw-element";
+
+    // //            gltfMessage.to = "GlbCreatedMessage" + "master-draw-element"; // "request.from", // Fill in the appropriate recipient
+
+    //         } catch (error) {
+    //             console.error('Failed to export GLB:', error);
+    //         }
+    //     })();
+
+    // }, []);
+
+
+
+
+  // const exportGLB = () => {
+    //     if (!groupRef.current) return;
+
+    //     // 1. Define explicit rotation keyframes for the named mesh
+    //     const times = [0, 10]; // 10 seconds (seconds) animation
+
+    //     const listSize = 12
+        
+    //     const qList: THREE.Quaternion[] = [];
+    //     for (let i = 0; i < listSize; i++) {
+    //         const angle = (i / (times.length - 1)) * Math.PI * 2;
+    //         qList.push(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), angle));
+    //     }
+        
+    //     const qInitial = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), 0);
+    //     const qFinal1 = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI * 2 / 3); // 120 degrees rotation
+    //     const qFinal2 = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI * 4 / 3); // 240 degrees rotation
+ 
+    //     // one assumes these muchmatch,
+
+    //     const track = new THREE.QuaternionKeyframeTrack(
+    //         'rotatingCube.quaternion',
+    //         times,
+    //         [
+    //             qInitial.x, qInitial.y, qInitial.z, qInitial.w,
+    //             qFinal1.x, qFinal1.y, qFinal1.z, qFinal1.w //,
+    //      //       qFinal2.x, qFinal2.y, qFinal2.z, qFinal2.w
+    //         ]
+    //     );
+
+    //     const clip = new THREE.AnimationClip('SpinAction', 10, [track]);
+    //     const exporter = new GLTFExporter();
+
+    //     exporter.parse(
+    //         groupRef.current,
+    //         (gltf) => {
+    //             const blob = new Blob([gltf as ArrayBuffer], { type: 'application/octet-stream' });
+    //             const link = document.createElement('a');
+    //             link.href = URL.createObjectURL(blob);
+    //             link.download = 'animated-cubes.glb';
+            
+    //             link.click();
+    //         },
+    //         (error) => console.error('An error occurred:', error),
+    //         { binary: true, animations: [clip] }
+    //     );
+    // };
+
