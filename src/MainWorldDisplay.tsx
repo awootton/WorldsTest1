@@ -2,7 +2,7 @@
 import { Canvas, createRoot } from "@react-three/fiber";
 import { Cube } from "./Cube";
 import { OrbitControls } from "@react-three/drei";
-import { Duck, StreetCenter, AnotherDuck, StreetCenter2 } from "./StreetCenter";
+ 
 import { Suspense, useEffect } from "react";
 
 // import { render } from '@react-three/offscreen';
@@ -31,8 +31,8 @@ export function MainWorldDisplay() {
         <boxGeometry args={[markerSize * 0.8, markerSize * 0.8, markerSize * 0.8]} />
         <meshStandardMaterial color={color} />
       </mesh>
-      <Duck />
-      <AnotherDuck />
+      {/* <Duck />
+      <AnotherDuck /> */}
       
     </>
   );

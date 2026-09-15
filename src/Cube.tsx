@@ -1,6 +1,7 @@
 import { useFrame } from "@react-three/fiber";
-import { FC, useRef } from "react";
+import { FC, Suspense, useRef } from "react";
 import type { Mesh } from "three";
+
 
 export const Cube: FC = () => {
   const cubeRef = useRef<Mesh>(null);

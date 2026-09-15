@@ -6,6 +6,9 @@
 
 yarn build
 
+# does this work? 
+cp build/asset-manifest.json build/manifest.json
+
 # done by knotoperator/apply_namespace.go  sync -a ./build/ ../knotfreeiot/docs/   
 
 # this would be better but it is not working but I'm not giving up.

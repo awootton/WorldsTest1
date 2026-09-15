@@ -2,11 +2,10 @@
 import { Canvas, createRoot } from "@react-three/fiber";
 import { Cube } from "./Cube";
 import { OrbitControls } from "@react-three/drei";
-import { Duck, StreetCenter, AnotherDuck } from "./StreetCenter";
 import { Suspense, useEffect } from "react";
 import { MainWorldDisplay } from "./MainWorldDisplay";
 
-import * as oct from "./knotfree-ts-lib/3d/DomainNameOctTree"
+import * as oct from "./knotfree-ts-lib/3d/Dns8Tree";
 import { TheDuckApp } from "./Apps/TheDuckApp";
 
 // import { render } from '@react-three/offscreen';
@@ -21,35 +20,25 @@ import { TheDuckApp } from "./Apps/TheDuckApp";
 // https://testmain-2n0u5w2p.xyz/  // the duck. Everyone else would have to be a subdomain and that's flakey now.
 
 
-
   const path = window.location.pathname
   const host = window.location.host
   const hostname = window.location.hostname
   const origin = window.location.origin
   const href = window.location.href
 
-  // console.log("WorldApp render path " + (path || "unknown location"));
-  // console.log("WorldApp render host " + (host || "unknown location"));
-  // console.log("WorldApp render hostname " + (hostname || "unknown location"));
-  // console.log("WorldApp render origin " + (origin || "unknown location"));
 
-  // console.log("WorldApp render path " + (path || "unknown location"));
-
-  // console.log("WorldApp window location " + (window.location));
-  // console.log("WorldApp window  " + (window));
-
-//   WorldApp render path /
-// WorldApp.tsx:32 WorldApp render host localhost:3010
-// WorldApp.tsx:33 WorldApp render hostname localhost
-// WorldApp.tsx:34 WorldApp render origin http://localhost:3010
-// WorldApp.tsx:36 WorldApp render path /
-// WorldApp.tsx:38 WorldApp window location http://localhost:3010/?domain=testmain-1n0u1w4p.vr&asset=street.jpg&type=floor
-// WorldApp.tsx:39 WorldApp window  [object Window]
-// AppSplitter.tsx:13 called from http://localhost:3010/?domain=testmain-1n0u1w4p.vr&asset=street.jpg&type=floor
-// AppSplitter.tsx:20 WorldApp render host localhost:3010
-// AppSplitter.tsx:21 WorldApp render hostname localhost
-// AppSplitter.tsx:22 WorldApp render origin http://localhost:3010
-// AppSplitter.tsx:24 WorldApp render path /
+//   WorldApp render path examples /
+//  render host localhost:3010
+//  render hostname localhost
+//  render origin http://localhost:3010
+//  render path /
+//  window location http://localhost:3010/?domain=testmain-1n0u1w4p.vr&asset=street.jpg&type=floor
+//  window  [object Window]
+// App Splitter.tsx:13 called from http://localhost:3010/?domain=testmain-1n0u1w4p.vr&asset=street.jpg&type=floor
+// App Splitter.tsx:20 WorldApp render host localhost:3010
+// App Splitter.tsx:21 WorldApp render hostname localhost
+// App Splitter.tsx:22 WorldApp render origin http://localhost:3010
+// App Splitter.tsx:24 WorldApp render path /
 
 let count = 0
   function WorldApp() {

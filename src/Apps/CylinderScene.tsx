@@ -60,7 +60,7 @@ export function CylinderCanvas() {
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'cylinders.glb';
+        link.download = 'cylinders2.glb';
         link.click();
 
         URL.revokeObjectURL(url); // Clean up
@@ -72,17 +72,17 @@ export function CylinderCanvas() {
     return (
       <>
         <group ref={groupRef}>
-          <directionalLight position={[1, 1, 1]} intensity={0.8} />
-          <mesh position={[-2, 0, 0]}>
-            <cylinderGeometry args={[1, 1, 1, 32]} />
+          <directionalLight position={[0, 1, 1]} intensity={0.8} />
+          <mesh position={[0, -.25, 0]}>
+            <cylinderGeometry args={[.25, .25, .5, 24]} />
             <meshStandardMaterial color="orange" />
           </mesh>
           <mesh ref={cubeRef} position={[0, 0, 0]}>
-            <cylinderGeometry args={[1, 1, 1, 32]} />
+            <cylinderGeometry args={[.25, .25, .5, 24]} />
             <meshStandardMaterial color="hotpink" />
           </mesh>
-          <mesh position={[2, 0, 0]}>
-            <cylinderGeometry args={[1, 1, 1, 32]} />
+          <mesh position={[0, .2, 0]}>
+            <cylinderGeometry args={[.25, .125, .5, 24]} />
             <meshStandardMaterial color="teal" />
           </mesh>
         </group>

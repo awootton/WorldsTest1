@@ -5,58 +5,19 @@ import * as THREE from 'three';
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
 import { useTexture, useGLTF } from '@react-three/drei';
 import { Scene } from "three";
 
-import * as messes from "../knotfree-ts-lib/3d/messageTypes";
+import { pubsub } from '../index';
+import {Cmd_Lacky} from '../knotfree-ts-lib/avatars/Cmd_Lacky';
+import {RPC_Gadget} from '../knotfree-ts-lib/avatars/RPC_Gadget';
 
-
-// if (window.addEventListener) {
-//     // For standards-compliant web browsers
-//     window.addEventListener("message", gotMessage, false);
-// }
-
-// function gotMessage(event: MessageEvent) {
-
-//     // they say we're supposed to watch the origin, but for now, let's just log it and see what we get
-
-//     console.log("Worlds test courtyard Received message:", event.data, event.origin, event.source);
-
-//     // sending ping back to the parent window
-
-//     console.log("Sending pong back to parent window");
-//     event.source?.postMessage("pong");
-// }
-
-// window.addEventListener("message", (event) => {
-
-//   // SECURITY STEP: Always verify the sender's origin!
-//   if (event.origin !== "https://parent-domain.com") {
-//     return; // Reject messages from untrusted domains
-//   }
-
-//   // Handle the received data
-//   console.log("Message received from parent:", event.data);
-
-//   // Custom logic based on the message content
-//   if (event.data.type === "changeColor") {
-//     document.body.style.backgroundColor = event.data.color;
-//   }
-// });
+// pubsub has a good name
 
 
 // just a simple courtyard with a cobblestone texture on the ground
 
 var replyCount = 0;// // ad hoc
-
-
-// TheCourtyardApp got message Data from parent: {type: 'TEST_MESSAGE', content: 'Hello from parent! to framethis is coming from master: testmain-0n0u0e5p.vr'}content: "Hello from parent! to framethis is coming from master: testmain-0n0u0e5p.vr"type: "TEST_MESSAGE"[[Prototype]]: Object http://localhost:3020 
-
-
-// TheCourtyardApp got message Data from parent: courtyard says right back at ya http://localhost:3010 Window {window: Window, self: Window, document: document, name: '', location: Location, …}
-// PubSubSimple.tsx:46 
-
 
 
 export function TheCourtyardApp() {
@@ -65,44 +26,20 @@ export function TheCourtyardApp() {
     // But for now, let's just log the messages and see what we get.
     // Since this is inside a iFrame it may load and unload.
 
-    const handleMessage = (event: MessageEvent<any>) => {
+    // Let's pretend that this is the only app here and we easily know the domain name and the master name
+    // of the space.
 
-        const request = messes.ensureMessageBaseClass(event.data)
-        if (!request) {
-            // bite me: console.warn("TheCourtyardApp received a message that is not a valid MessageBaseClass:", event.data);
-            return; // Not a valid MessageBaseClass, ignore
-        }
+    const cube = "testmain-0n0u0e5p";
 
-        if (replyCount > 10) {
-            return; // don't reply more than 10 times, just in case.
-        }
-        replyCount += 1;
+    const cmdr = new Cmd_Lacky(); // I love it
+    const rpc = new RPC_Gadget(pubsub, cube, cube + "-island-centre",cmdr);
+    // useEffect(() => {
+    //     console.log("subscribing to our channel:", rpc.GetOurChannelName(), "to ", pubsub.getDebugName());
+    //     pubsub.subscribe(rpc.GetOurChannelName(), "", false, (cmd: any, err: Error) => {
+    //         rpc.ProcessCommand(cmd, err);
+    //     });
+    // }, []); // empty dependency array means this effect runs once on mount and cleans up on unmount is that right?  yes.  see https://react.dev/reference/react/useEffect
 
-        //       TheCourtyardApp got message Data from parent: courtyard says right back at ya http://localhost:3010 
-
-        // We're supposed to check that we only get messages from gotohere but that would lock out all
-        // the other possible people who want to write Metaverse apps. Not good.
-
-        // SECURITY STEP: Replace with your actual trusted parent domain
-        //   const trustedOrigin = "https://parent-domain.com";
-        //   if (event.origin !== trustedOrigin) return;
-
-        // Process the incoming data - we don't reply.
-        console.log("TheCourtyardApp got message Data from parent:", event.data, event.origin, event.source);
-        // setParentData(event.data);
-        const reply = "courtyard says right back at ya";
-        const options = { targetOrigin: event.origin }; // Specify the target origin for security
-        // event.source?.postMessage(reply,options);
-    };
-
-    useEffect(() => {
-
-        // Add listener on mount
-        window.addEventListener("message", handleMessage);
-
-        // Clean up listener on unmount to prevent memory leaks
-        return () => window.removeEventListener("message", handleMessage);
-    }, []); // Empty array ensures this runs once on mount
 
     return (
         <div
@@ -127,7 +64,7 @@ export function TheCourtyardApp() {
     );
 }
 
-// we should try to make a glb blog in here and message it away to the parent window. 
+// we should try to make something in here and message it away to the parent window. 
 // that's the plan.
 
 function CourtyardCanvas() {
@@ -140,8 +77,8 @@ function CourtyardCanvas() {
         const cube = cubeRef.current;
         if (!cube) return;
         // cube.rotation.x += 0.01;
-        cube.rotation.y += 0.05;
-        cube.rotation.x += 0.025;
+        cube.rotation.y += 0.05 / 40;
+        cube.rotation.x += 0.025 / 40;
         cube.scale.set(10, 10, 10);
     });
 

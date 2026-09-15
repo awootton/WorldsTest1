@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { useTexture, useGLTF } from '@react-three/drei';
+import { useTexture, useGLTF, Edges } from '@react-three/drei';
 import * as THREE from 'three';
+
+// make this go away. I gets included too early. 
 
 export function StreetCenter() {
 
@@ -77,5 +79,3 @@ export function AnotherDuck() {
         </>
     );
 }
-
-

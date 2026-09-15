@@ -1,12 +1,7 @@
 
 import * as THREE from 'three';
 
-import { CacheIntf } from './CacheIntf';
-<<<<<<< HEAD
-import * as oct from './DomainNameOctTree'
-=======
-import * as oct from './UrlOctTree'
->>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
+import * as oct from './Dns8Tree'
 // import * as atwdns from './DnsTypes'
 import { error } from 'console';
 import * as utils from './utils';
@@ -305,7 +300,6 @@ export async function TwoWayLookupAndMerge(rawChain: oct.Cube[]): Promise<[oct.T
 }
 
 
-<<<<<<< HEAD
 // We have an expired ChildBitsCacheEntry. Calculate a new value for it.
 // Come on CP. I dare you. (I threw away the junk he wrote.)
 // Wow. It's not right. It needs to call 
@@ -329,15 +323,6 @@ export async function TwoWayLookupAndMerge(rawChain: oct.Cube[]): Promise<[oct.T
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 
-=======
-// Copyright 2026 Alan Tracey Wootton
-// See LICENSE
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-
->>>>>>> 4ea848647150f3f36321980a536bfe721cc8f55e
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the

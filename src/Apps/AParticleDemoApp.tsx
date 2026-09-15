@@ -2,11 +2,17 @@
 
 import * as THREE from 'three';
 
+import { useEffect } from "react";
+
 import { Canvas, useFrame } from "@react-three/fiber";
 import type { RootState } from "@react-three/fiber";
 
 import { OrbitControls } from '@react-three/drei';
 import { Perf } from 'r3f-perf'
+import { pubsub } from '../index';
+
+import {Cmd_Lacky} from '../knotfree-ts-lib/avatars/Cmd_Lacky';
+import {RPC_Gadget} from '../knotfree-ts-lib/avatars/RPC_Gadget';
 
 
 function createParticleSystem(scene: THREE.Scene): [THREE.Scene, THREE.Points, () => void] {
@@ -16,9 +22,20 @@ function createParticleSystem(scene: THREE.Scene): [THREE.Scene, THREE.Points, (
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
 
-    for (let i = 0; i < particleCount * 3; i++) {
-        positions[i] = (Math.random() - 0.5) * 10; // Spread particles
+    for (let i = 0; i < particleCount; i++) {
+
+        const y = Math.random() * 10; // Spread particles above the ground
+        const x = (Math.random() - 0.5) * .5; // Spread particles in X direction
+        const z = (Math.random() - 0.5) * .5; // Spread particles in Z direction
+
+        positions[0 + i * 3] = x * y;
+        positions[1 + i * 3] = y;
+        positions[2 + i * 3] = z * y;
     }
+
+    // for (let i = 0; i < particleCount * 3; i++) {
+    //     positions[i] = (Math.random() - 0.5) * 10; // Spread particles above the ground
+    // }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
@@ -101,6 +118,18 @@ export function TheParticleDemoApp() {
 
     const targetPosition = new THREE.Vector3(0, 0, 0); // Set the target position for OrbitControls
 
+    const cube = "testmain-2n0u7w2p";  
+    const cmdr = new Cmd_Lacky(); // I love it
+    const rpc = new RPC_Gadget(pubsub,cube,cube + "-island-centre",cmdr);
+    // useEffect(() => {
+    //     console.log("subscribing to our channel:", rpc.GetOurChannelName(), "to ", pubsub.getDebugName());
+    //     pubsub.subscribe(rpc.GetOurChannelName(), "", false, (cmd: any, err: Error) => {
+    //         rpc.ProcessCommand(cmd, err);
+    //     });
+    // }, []); // empty dependency array means this effect runs once on mount and cleans up on unmount is that right?  yes.  see https://react.dev/reference/react/useEffect
+
+
+
     return (
         <div
             className="App"
@@ -119,7 +148,21 @@ export function TheParticleDemoApp() {
                 }}
             >
 
+
+                <ambientLight intensity={0.5} />
+                <directionalLight position={[5, 10, 7.5]} intensity={1} />
+
                 <Perf position="bottom-right" minimal />
+
+                <mesh position={[0, 0, 0]}>
+                    <boxGeometry args={[0.05, 0.5, 0.05]} />
+                    <meshStandardMaterial color="#ff0000" />
+                </mesh>
+
+                <mesh position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+                    <planeGeometry args={[4, 4]} />
+                    <meshStandardMaterial color="white" />
+                </mesh>
 
                 <OrbitControls
                     target={targetPosition}
