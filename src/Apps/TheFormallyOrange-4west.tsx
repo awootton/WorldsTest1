@@ -46,13 +46,6 @@ export function TheFormallyOrange4WestApp() {
         console.error("Something is wrong here in TheHollywoodOrange4WestApp", cubeName, rpc.cleanMasterDomainName);
     }
 
-    // useEffect(() => {// boiler plate.
-    //     console.log("subscribing to our orange channel:", rpc.GetOurChannelName(), "to ", pubsub.getDebugName());
-    //     pubsub.subscribe(rpc.GetOurChannelName(), "", false, (cmd: any, err: Error) => {
-    //         rpc.ProcessCommand(cmd, err);
-    //     });
-    // }, []); // empty dependency array means this effect runs once on mount and cleans up on unmount is that right?  yes.  see https://react.dev/reference/react/useEffect
-
     useEffect(() => {
 
         void (async () => {
@@ -63,6 +56,11 @@ export function TheFormallyOrange4WestApp() {
             console.log("TheFormallyOrange4WestAppgot reply", mainReply);
             console.log("TheFormallyOrange4WestAppgot reply", mainReply);
             console.log("TheFormallyOrange4WestAppgot reply", mainReply);
+
+            // The command we most want to send is "display GLB" which sends a glb blob over to player.
+            // note that there is a function here (exportGroupToBlob) tyhat will create the GLB blob for us..
+
+
         })();
 
     }, []); // empty dependency array means this effect runs once on mount and cleans up on unmount is that right?  yes.  see https://react.dev/reference/react/useEffect
